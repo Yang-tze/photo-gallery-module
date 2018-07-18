@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "react-dev": "webpack -d --watch",
+    "server-dev": "nodemon server/index.js"
+  },
+  "engines": {
+    "node": ">=6.13.0"
   },
   "repository": {
     "type": "git",
@@ -23,8 +27,11 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^1.0.0",
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "faker": "^4.1.0",
     "style-loader": "^0.21.0",
-    "webpack": "^4.16.1"
+    "webpack": "^4.16.1",
+    "webpack-cli": "^3.1.0"
   },
   "dependencies": {
     "body-parser": "^1.18.3",

@@ -20,6 +20,6 @@ CREATE TABLE product_images (
   image_id INT NOT NULL;
 );
 
-INSERT INTO product (id, name, detail) VALUES ();
-INSERT INTO images (id, img_path) VALUES ();
-INSERT INTO product_images (id, product_id, image_id) VALUES ();
+INSERT INTO product (name, detail) VALUES ();
+INSERT INTO images (img_path) VALUES ();
+INSERT INTO product_images (product_id, image_id) VALUES ();
