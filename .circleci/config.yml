@@ -54,6 +54,5 @@ jobs:
           command: npm start
           background: true
 
-      - run: sleep 5
       # run tests!
       - run: npm run test
