@@ -31,7 +31,7 @@ jobs:
 
       - run:
         name: install mysql
-        command: sudo apt install -y mysql-client
+        command: 'sudo apt install -y mysql-client'
       # Download and cache dependencies
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
