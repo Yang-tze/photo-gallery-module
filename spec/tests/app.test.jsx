@@ -1,7 +1,8 @@
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
 import puppeteer from 'puppeteer';
-const pageUrl = 'http://localhost:3002';
+const port = process.env.PORT || 3002;
+const pageUrl = `http://localhost:${port}`;
 import App from './../../client/src/components/app';
 import MainImage from './../../client/src/components/main-image';
 
@@ -25,7 +26,7 @@ afterAll(() => {
 });
 
 describe('Photo Gallery', () => {
-  
+
 });
 
 describe('Main Image', () => {
