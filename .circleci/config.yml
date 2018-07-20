@@ -29,12 +29,11 @@ jobs:
           command: 'sudo npm install -g npm@latest'
 
       - run: npm install
-
       - save_cache:
           paths:
             - ./node_modules
           key: dependency-cache-{{ checksum "package.json" }}
 
-      - run: npm run server-dev
+      - run: npm start
       # run tests!
       - run: npm run test
