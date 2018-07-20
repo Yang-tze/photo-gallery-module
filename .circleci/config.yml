@@ -27,7 +27,7 @@ jobs:
       - run:
           name: update-npm
           command: 'sudo npm install -g npm@latest'
-          
+
       - run: npm install
 
       - save_cache:
@@ -35,5 +35,6 @@ jobs:
             - ./node_modules
           key: dependency-cache-{{ checksum "package.json" }}
 
+      - run: npm run server-dev
       # run tests!
       - run: npm run test
