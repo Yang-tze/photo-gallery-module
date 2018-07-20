@@ -43,9 +43,9 @@ jobs:
             - ./node_modules
           key: dependency-cache-{{ checksum "package.json" }}
 
-      # - run:
-      #     name: Mysql database setup
-      #     command: npm run reset-db-ci
+      - run:
+          name: Mysql database setup
+          command: npm run reset-db-ci
 
       - run:
           command: npm start
