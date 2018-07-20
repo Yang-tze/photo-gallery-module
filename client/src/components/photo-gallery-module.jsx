@@ -3,7 +3,7 @@ import $ from 'jquery';
 import ImageList from './image-list.jsx';
 import MainImage from './main-image.jsx';
 
-class App extends React.Component {
+class PhotoGalleryModule extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,7 +13,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='photo-gallery'>
         <ImageList/>
         <MainImage/>
       </div>
@@ -21,4 +21,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default PhotoGalleryModule;

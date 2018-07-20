@@ -1,4 +1,4 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/app.jsx';
-ReactDOM.render(<App/>, document.getElementById('app'));
+import PhotoGalleryModule from './components/photo-gallery-module.jsx';
+ReactDOM.render(<PhotoGalleryModule/>, document.getElementById('photo-gallery'));
