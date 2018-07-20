@@ -20,14 +20,14 @@ beforeAll(async () => {
   });
   page = await browser.newPage();
   await page.setViewport({ width, height });
-}, 30000);
+}, 60000);
 afterAll(() => {
   browser.close();
 });
 
-describe('Photo Gallery', () => {
-
-});
+// describe('Photo Gallery', () => {
+//
+// });
 
 describe('Main Image', () => {
 
