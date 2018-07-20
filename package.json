@@ -10,7 +10,7 @@
     "start": "node server/index.js",
     "server-dev": "nodemon server/index.js",
     "reset-db": "mysql -u student -p < ./schema.sql",
-    "reset-db-ci": "mysql -u root -p< ./schema.sql",
+    "reset-db-ci": "mysql -u root -p < ./schema.sql",
     "lint": "eslint ./client/src ./server"
   },
   "engines": {
