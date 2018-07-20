@@ -10,8 +10,6 @@ import ImageList from './../../client/src/components/image-list';
 
 let page;
 let browser;
-const width = 1280;
-const height = 720;
 
 beforeAll(async () => {
   browser = await puppeteer.launch();
