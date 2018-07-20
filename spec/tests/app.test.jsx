@@ -2,13 +2,14 @@ import React from 'react';
 import { shallow, mount, render } from 'enzyme';
 import puppeteer from 'puppeteer';
 const pageUrl = 'http://localhost:3002';
+import App from './../../client/src/components/app';
 import MainImage from './../../client/src/components/main-image';
 
 
 let page;
 let browser;
 const width = 1280;
-const height = 720
+const height = 720;
 
 beforeAll(async () => {
   browser = await puppeteer.launch({
@@ -21,6 +22,10 @@ beforeAll(async () => {
 });
 afterAll(() => {
   browser.close();
+});
+
+describe('Photo Gallery', () => {
+  
 });
 
 describe('Main Image', () => {

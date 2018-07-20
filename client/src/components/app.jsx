@@ -1,7 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import $ from 'jquery';
-import MainImage from './components/main-image.jsx';
+import ImageList from './image-list.jsx';
+import MainImage from './main-image.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -14,6 +14,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <ImageList/>
         <MainImage/>
       </div>
     );
@@ -21,5 +22,3 @@ class App extends React.Component {
 }
 
 export default App;
-
-// ReactDOM.render(<App/>, document.getElementById('app'));
