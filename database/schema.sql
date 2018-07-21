@@ -25,5 +25,6 @@ CREATE TABLE product_images (
 );
 
 -- INSERT INTO product (name, detail) VALUES ();
-INSERT INTO images (img_path) VALUES ("sandisk_16gb_01.jpg"), ("sandisk_16gb_02.jpg");
+INSERT INTO images (img_path) VALUES ("sandisk_16gb_01.jpg"),
+                                     ("sandisk_16gb_02.jpg");
 -- INSERT INTO product_images (product_id, image_id) VALUES ();

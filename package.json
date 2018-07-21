@@ -9,9 +9,10 @@
     "react-dev": "webpack -d --watch",
     "start": "node server/index.js",
     "server-dev": "nodemon server/index.js",
-    "reset-db": "mysql -u student -p < ./schema.sql",
-    "reset-db-ci": "mysql -u root < ./schema.sql",
-    "lint": "eslint ./client/src ./server"
+    "generate-csv": "nodemon database/csv-generator/faker-server.js",
+    "reset-db": "mysql -u student -p < ./database/schema.sql",
+    "reset-db-ci": "mysql -u root < ./database/schema.sql",
+    "lint": "eslint ./client/src ./server ./database"
   },
   "engines": {
     "node": ">=6.13.0"

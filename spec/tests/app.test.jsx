@@ -1,12 +1,12 @@
 import React from 'react';
-import { shallow, mount, render } from 'enzyme';
+import { shallow } from 'enzyme';
 import puppeteer from 'puppeteer';
+import PhotoGalleryModule from '../../client/src/components/photo-gallery-module';
+import MainImage from '../../client/src/components/main-image';
+import ImageList from '../../client/src/components/image-list';
+
 const port = process.env.PORT || 3002;
 const pageUrl = `http://localhost:${port}`;
-import PhotoGalleryModule from './../../client/src/components/photo-gallery-module';
-import MainImage from './../../client/src/components/main-image';
-import ImageList from './../../client/src/components/image-list';
-
 
 let page;
 let browser;
