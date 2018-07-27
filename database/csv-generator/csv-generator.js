@@ -1,9 +1,10 @@
-const fakeData = [];
+let fakeData = [];
 
 const getFakeData = () => {
-  $.get('/faker', (data) => {
+  $.post('/faker', (data) => {
     console.log(data);
   });
 };
 
-getFakeData();
+
+getFakeData(100);
