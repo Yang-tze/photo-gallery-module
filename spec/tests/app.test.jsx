@@ -19,15 +19,15 @@ afterAll(() => {
   browser.close();
 });
 
-//Testing Main Photo Gallery Component
+//Testing
 describe('Test', () => {
 
   beforeEach(async () => {
     await page.goto(pageUrl, {waitUntil: 'networkidle2'});
   });
 
-  it('test correctly', async () => {
-    expect(true).toBe(true);
+  it('renders correctly', async () => {
+    expect(shallow(<PhotoGalleryModule/>).find('div.photo-gallery').exists()).toBe(true);
   });
 
 });
