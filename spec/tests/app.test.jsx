@@ -18,3 +18,16 @@ beforeAll(async () => {
 afterAll(() => {
   browser.close();
 });
+
+//Testing Main Photo Gallery Component
+describe('Test', () => {
+
+  beforeEach(async () => {
+    await page.goto(pageUrl, {waitUntil: 'networkidle2'});
+  });
+
+  it('test correctly', async () => {
+    expect(true).toBe(true);
+  });
+
+});
