@@ -49,7 +49,7 @@ jobs:
 
       - run:
           name: Mysql database setup
-          command: npm run reset-db-ci #loading data onto mysql on circle-ci
+          command: npm run reset-db #loading data onto mysql on circle-ci
 
       - run:
           command: npm start

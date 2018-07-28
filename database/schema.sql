@@ -24,7 +24,19 @@ CREATE TABLE product_images (
   PRIMARY KEY (id)
 );
 
--- INSERT INTO product (name, detail) VALUES ();
-INSERT INTO images (img_path) VALUES ("sandisk_16gb_01.jpg"),
-                                     ("sandisk_16gb_02.jpg");
--- INSERT INTO product_images (product_id, image_id) VALUES ();
+SET GLOBAL local_infile = 'ON';
+
+LOAD DATA LOCAL INFILE './database/products.csv' INTO TABLE products
+FIELDS TERMINATED BY ','
+OPTIONALLY ENCLOSED BY '"'
+LINES TERMINATED BY '\n';
+
+LOAD DATA LOCAL INFILE './database/product_images.csv' INTO TABLE product_images
+FIELDS TERMINATED BY ','
+OPTIONALLY ENCLOSED BY '"'
+LINES TERMINATED BY '\n';
+
+LOAD DATA LOCAL INFILE './database/images.csv' INTO TABLE images
+FIELDS TERMINATED BY ','
+OPTIONALLY ENCLOSED BY '"'
+LINES TERMINATED BY '\n';
