@@ -7,4 +7,4 @@ const getFakeData = () => {
 };
 
 
-getFakeData(100);
+getFakeData();
