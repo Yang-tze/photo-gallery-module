@@ -1,5 +1,5 @@
 *.log
 node_modules/
-bundle.
+bundle.js
 *.csv
 __snapshots__/
