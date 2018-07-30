@@ -15,8 +15,10 @@ const spl = ','
 
 app.post('/faker', (req, res) => {
   let data = [];
+  const imgLen = 50;
+  const maxImg = 6;
   for(var i = 0; i < 100; i++) {
-    data.push(fakerSchema(6, 100));
+    data.push(fakerSchema(maxImg, imgLen));
   }
   fs.writeFile(path.join(__dirname,'../products.csv'), getProducts(data), 'utf8', (err) => {
     if (err) throw err;
@@ -26,7 +28,7 @@ app.post('/faker', (req, res) => {
     if (err) throw err;
     console.log('The images file has been saved!');
   });
-  fs.writeFile(path.join(__dirname,'../images.csv'), getImages(100), 'utf8', (err) => {
+  fs.writeFile(path.join(__dirname,'../images.csv'), getImages(imgLen), 'utf8', (err) => {
     if (err) throw err;
     console.log('The images file has been saved!');
   });

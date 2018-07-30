@@ -8,25 +8,32 @@ class PhotoGalleryModule extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      images: ['1.jpg', '2.jpg', '3.jpg'],
-      image: '1.jpg',
-      show: false
+      images: [],
+      image: '',
+      show: false,
+      product_name: '',
+      product_detail: ''
     }
   }
 
   componentDidMount() {
     this.getImageList();
+    this.getProductInfo();
   }
 
   getImageList() {
-    $.get(`/${1}/images`, (data) => {
-      console.log(data);
-      // this.setState({images: data, image: data[0]});
+    $.get(`${window.location.pathname}/images`, (data) => {
+      this.setState({images: data, image: data[0]});
     });
   }
 
+  getProductInfo() {
+    $.get(`${window.location.pathname}/product_info`, (data) => {
+      this.setState({product_name: data['name'], product_detail: data['detail']});
+    })
+  }
+
   setImage(img) {
-    console.log(img);
     this.setState({image: img});
   }
 
@@ -48,6 +55,8 @@ class PhotoGalleryModule extends React.Component {
           handleClose={this.hideModal.bind(this)}
           images={this.state.images}
           image={this.state.image}
+          product_name={this.state.product_name}
+          product_detail={this.state.product_detail}
         />
       </div>
     );
