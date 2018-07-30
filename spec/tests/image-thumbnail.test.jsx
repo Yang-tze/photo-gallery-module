@@ -5,7 +5,7 @@ import ImageThumbnail from '../../client/src/components/image-thumbnail';
 //Testing Image Thumbnail Component
 describe('Image Thumbnail', () => {
 
-  it('renders correctly', async () => {
+  it('renders correctly', () => {
     expect(shallow(<ImageThumbnail/>).find('div.image-thumbnail').exists()).toBe(true);
   });
 

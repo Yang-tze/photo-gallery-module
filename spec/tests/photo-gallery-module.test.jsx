@@ -7,15 +7,15 @@ import ImageList from '../../client/src/components/image-list';
 //Testing Main Photo Gallery Component
 describe('Photo Gallery', () => {
 
-  it('renders correctly', async () => {
+  it('renders correctly', () => {
     expect(shallow(<PhotoGalleryModule/>).find('div.photo-gallery').exists()).toBe(true);
   });
 
-  it('renders an image list', async () => {
+  it('renders an image list', () => {
     expect(shallow(<PhotoGalleryModule/>).find(ImageList).exists()).toBe(true);
   });
 
-  it('renders a main image', async () => {
+  it('renders a main image', () => {
     expect(shallow(<PhotoGalleryModule/>).find(MainImage).exists()).toBe(true);
   });
 
