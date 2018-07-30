@@ -9,9 +9,9 @@
     "react-dev": "webpack -d --watch",
     "start": "node server/index.js",
     "server-dev": "nodemon server/index.js",
-    "reset-db": "mysql -u student -p < ./schema.sql",
-    "reset-db-ci": "mysql -u root < ./schema.sql",
-    "lint": "eslint ./client/src ./server"
+    "generate-csv": "nodemon database/csv-generator/faker-server.js",
+    "reset-db": "mysql --local-infile -u root < ./database/schema.sql",
+    "lint": "eslint ./client/src ./server ./database"
   },
   "engines": {
     "node": ">=6.13.0"
@@ -55,6 +55,7 @@
     "express": "^4.16.3",
     "jquery": "^3.3.1",
     "mysql": "^2.15.0",
+    "npm": "^6.2.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "request": "^2.87.0"
