@@ -19,8 +19,8 @@ afterAll(() => {
   browser.close();
 });
 
-//Testing Main Photo Gallery Component
-describe('Photo Gallery', () => {
+//Testing
+describe('Test', () => {
 
   beforeEach(async () => {
     await page.goto(pageUrl, {waitUntil: 'networkidle2'});
@@ -30,40 +30,4 @@ describe('Photo Gallery', () => {
     expect(shallow(<PhotoGalleryModule/>).find('div.photo-gallery').exists()).toBe(true);
   });
 
-  it('renders an image list', async () => {
-    expect(shallow(<PhotoGalleryModule/>).find(ImageList).exists()).toBe(true);
-  });
-
-  it('renders a main image', async () => {
-    expect(shallow(<PhotoGalleryModule/>).find(MainImage).exists()).toBe(true);
-  });
-
-});
-
-//Testing Image List Component
-describe('Image List', () => {
-
-  beforeEach(async () => {
-    await page.goto(pageUrl, {waitUntil: 'networkidle2'});
-  });
-
-  it('renders correctly', async () => {
-    expect(shallow(<ImageList/>).find('div.image-list').exists()).toBe(true);
-  });
-});
-
-//Testing Main Image Component
-describe('Main Image', () => {
-
-  beforeEach(async () => {
-    await page.goto(pageUrl, {waitUntil: 'networkidle2'});
-  });
-
-  it('renders correctly', async () => {
-    expect(shallow(<MainImage/>).find('div.main-image').exists()).toBe(true);
-  });
-
-  it('renders an image', async () => {
-    expect(shallow(<MainImage/>).find('img').exists()).toBe(true);
-  });
 });
