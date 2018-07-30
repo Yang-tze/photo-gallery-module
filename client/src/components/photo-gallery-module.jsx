@@ -45,7 +45,7 @@ class PhotoGalleryModule extends React.Component {
         <MainImage image={this.state.image} showModal={this.showModal.bind(this)}/>
         <ImageGalleryModal
           show={this.state.show}
-          handleClose={this.hideModal}
+          handleClose={this.hideModal.bind(this)}
           images={this.state.images}
           image={this.state.image}
         />
