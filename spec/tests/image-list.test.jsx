@@ -6,6 +6,6 @@ import ImageList from '../../client/src/components/image-list';
 describe('Image List', () => {
 
   it('renders correctly', () => {
-    expect(shallow(<ImageList/>).find('div.image-list').exists()).toBe(true);
+    expect(shallow(<ImageList images={['1.jpg']}/>).find('div.image-list').exists()).toBe(true);
   });
 });
