@@ -1,6 +1,7 @@
 .image-thumbnail {
   width: 40px;
   height: 40px;
+  margin-top: 5px;
   border-width: 1px;
   border-style: solid;
   border-radius: 2px;
@@ -15,7 +16,8 @@
 .thumbnail {
   max-width: 40px;
   max-height: 40px;
-  position: absolute;
+  display: inline-block;
+  text-align: center;
 }
 
 .image-list {
@@ -27,8 +29,8 @@
 .main-image {
   position: relative;
   overflow: hidden;
-  width: 40%;
-  padding-top: 40%;
+  width: 80%;
+  padding-top: 80%;
   display: inline-block;
   text-align: center;
 }
