@@ -12,8 +12,8 @@ class PhotoGalleryModule extends React.Component {
       image: '',
       show: false,
       product_name: '',
-      product_detail: ''
-    }
+      product_detail: '',
+    };
   }
 
   componentDidMount() {
@@ -23,40 +23,43 @@ class PhotoGalleryModule extends React.Component {
 
   getImageList() {
     $.get(`${window.location.pathname}/images`, (data) => {
-      this.setState({images: data, image: data[0]});
+      this.setState({ images: data, image: data[0] });
     });
   }
 
   getProductInfo() {
     $.get(`${window.location.pathname}/product_info`, (data) => {
-      this.setState({product_name: data['name'], product_detail: data['detail']});
-    })
+      this.setState({ product_name: data.name, product_detail: data.detail });
+    });
   }
 
   setImage(img) {
-    this.setState({image: img});
+    this.setState({ image: img });
   }
 
   showModal() {
-    this.setState({show: true});
+    this.setState({ show: true });
   }
 
   hideModal() {
-    this.setState({show: false});
+    this.setState({ show: false });
   }
 
   render() {
+    const {
+      images, image, show, product_name: productName, product_detail: productDetail,
+    } = this.state;
     return (
-      <div className='photo-gallery'>
-        <ImageList images={this.state.images} setImage={this.setImage.bind(this)}/>
-        <MainImage image={this.state.image} showModal={this.showModal.bind(this)}/>
+      <div className="photo-gallery">
+        <ImageList images={images} setImage={img => this.setImage(img)} />
+        <MainImage image={image} showModal={() => this.showModal()} />
         <ImageGalleryModal
-          show={this.state.show}
-          handleClose={this.hideModal.bind(this)}
-          images={this.state.images}
-          image={this.state.image}
-          product_name={this.state.product_name}
-          product_detail={this.state.product_detail}
+          show={show}
+          handleClose={() => this.hideModal()}
+          images={images}
+          image={image}
+          productName={productName}
+          productDetail={productDetail}
         />
       </div>
     );
