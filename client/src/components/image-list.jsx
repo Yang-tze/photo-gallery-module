@@ -1,12 +1,25 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ImageThumbnail from './image-thumbnail.jsx';
 
-const ImageList = (props) => (
-  <div className='image-list'>
-    {props.images.map(thumbnail => {
-      return <ImageThumbnail key={thumbnail} imageThumbnail={thumbnail} setImage={props.setImage.bind(this)}/>;
-    })}
+
+const ImageList = ({ images, setIndex }) => (
+  <div className="image-list">
+    {images.map(((thumbnail, index) => (
+      <ImageThumbnail
+        key={thumbnail}
+        imageThumbnail={thumbnail}
+        index={index}
+        setIndex={idx => setIndex(idx)}
+      />
+    )))}
   </div>
-)
+);
+
+ImageList.propTypes = {
+  images: PropTypes.array.isRequired,
+  setIndex: PropTypes.func.isRequired,
+};
+
 
 export default ImageList;
