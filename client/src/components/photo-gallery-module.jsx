@@ -8,8 +8,8 @@ class PhotoGalleryModule extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      images: [],
-      image: '',
+      images: ['1.jpg', '2.jpg', '3.jpg'],
+      index: 0,
       show: false,
       product_name: '',
       product_detail: '',
@@ -23,7 +23,7 @@ class PhotoGalleryModule extends React.Component {
 
   getImageList() {
     $.get(`${window.location.pathname}/images`, (data) => {
-      this.setState({ images: data, image: data[0] });
+      this.setState({ images: data });
     });
   }
 
@@ -33,8 +33,8 @@ class PhotoGalleryModule extends React.Component {
     });
   }
 
-  setImage(img) {
-    this.setState({ image: img });
+  setIndex(idx) {
+    this.setState({ index: idx });
   }
 
   showModal() {
@@ -47,17 +47,17 @@ class PhotoGalleryModule extends React.Component {
 
   render() {
     const {
-      images, image, show, product_name: productName, product_detail: productDetail,
+      images, index, show, product_name: productName, product_detail: productDetail,
     } = this.state;
     return (
       <div className="photo-gallery">
-        <ImageList images={images} setImage={img => this.setImage(img)} />
-        <MainImage image={image} showModal={() => this.showModal()} />
+        <ImageList images={images} setIndex={idx => this.setIndex(idx)} />
+        <MainImage image={images[index]} showModal={() => this.showModal()} />
         <ImageGalleryModal
           show={show}
           handleClose={() => this.hideModal()}
           images={images}
-          image={image}
+          image={images[index]}
           productName={productName}
           productDetail={productDetail}
         />
