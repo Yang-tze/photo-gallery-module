@@ -1,0 +1,15 @@
+FROM mysql:5.7
+
+WORKDIR /docker-entrypoint-initdb.d
+
+COPY ./schema.sql /docker-entrypoint-initdb.d
+
+COPY ./products.csv /docker-entrypoint-initdb.d
+
+COPY ./product_images.csv /docker-entrypoint-initdb.d
+
+COPY ./images.csv /docker-entrypoint-initdb.d
+
+ENV MYSQL_DATABASE=photo_gallery \
+    MYSQL_ROOT_PASSWORD=root
+

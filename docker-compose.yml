@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  photo_gallery:
+    build: ./
+    volumes:
+      - ./:/src/app
+    depends_on:
+      - photo_gallery_db
+    ports:
+      - '3002:3002'
+  
+  photo_gallery_db:
+    build: ./database
+    ports:
+      - '3306:3306'
+
+# version: '3'
+
+# services:
+#   photo_gallery:
+#     image: slowmike/photo_gallery_server_v1
+#     depends_on:
+#       - photo_gallery_db
+#     ports:
+#       - '80:3002'
+
+#   photo_gallery_db:
+#     image: slowmike/photo_gallery_db_v1
+#     ports:
+#       - '3306:3306'

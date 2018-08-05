@@ -9,10 +9,11 @@ class PhotoGalleryModule extends React.Component {
     super(props);
     this.state = {
       images: ['1.jpg', '2.jpg', '3.jpg'],
+      image: '1.jpg',
       index: 0,
       show: false,
-      product_name: '',
-      product_detail: '',
+      product_name: 'SanDisk Cruzer CZ36 64GB USB 2.0 Flash Drive, Frustration-Free Packaging- SDCZ36-064G-AFFP',
+      product_detail: '64GB',
     };
   }
 
@@ -22,13 +23,15 @@ class PhotoGalleryModule extends React.Component {
   }
 
   getImageList() {
-    $.get(`${window.location.pathname}/images`, (data) => {
+    $.get(`/images${window.location.pathname}/images`, (data) => {
+    // $.get(`http://ec2-54-153-53-170.us-west-1.compute.amazonaws.com${window.location.pathname}/images`, (data) => {
       this.setState({ images: data });
     });
   }
 
   getProductInfo() {
-    $.get(`${window.location.pathname}/product_info`, (data) => {
+    $.get(`/images${window.location.pathname}/product_info`, (data) => {
+    // $.get(`http://ec2-54-153-53-170.us-west-1.compute.amazonaws.com${window.location.pathname}/product_info`, (data) => {
       this.setState({ product_name: data.name, product_detail: data.detail });
     });
   }
@@ -37,8 +40,14 @@ class PhotoGalleryModule extends React.Component {
     this.setState({ index: idx });
   }
 
+  setImage(img) {
+    this.setState({ image: img });
+  }
+
   showModal() {
+    const { images, index } = this.state;
     this.setState({ show: true });
+    this.setImage(images[index]);
   }
 
   hideModal() {
@@ -47,7 +56,7 @@ class PhotoGalleryModule extends React.Component {
 
   render() {
     const {
-      images, index, show, product_name: productName, product_detail: productDetail,
+      images, image, index, show, product_name: productName, product_detail: productDetail,
     } = this.state;
     return (
       <div className="photo-gallery">
@@ -55,11 +64,12 @@ class PhotoGalleryModule extends React.Component {
         <MainImage image={images[index]} showModal={() => this.showModal()} />
         <ImageGalleryModal
           show={show}
-          handleClose={() => this.hideModal()}
           images={images}
-          image={images[index]}
+          image={image}
           productName={productName}
           productDetail={productDetail}
+          handleClose={() => this.hideModal()}
+          setImage={img => this.setImage(img)}
         />
       </div>
     );

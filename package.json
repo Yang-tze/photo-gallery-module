@@ -5,13 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "test-dev": "jest --watch",
+    "test-dev": "jest --coverage",
     "react-dev": "webpack -d --watch",
-    "build": "webpack -d",
+    "build": "webpack -p",
     "start": "node server/index.js",
     "server-dev": "nodemon server/index.js",
     "generate-csv": "nodemon database/csv-generator/faker-server.js",
-    "reset-db": "mysql --local-infile -u root < ./database/schema.sql",
+    "reset-db": "mysql --local-infile -u root < schema.sql",
     "lint": "eslint ./client/src ./server ./database"
   },
   "engines": {
@@ -54,6 +54,7 @@
   },
   "dependencies": {
     "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
     "express": "^4.16.3",
     "jquery": "^3.3.1",
     "mysql": "^2.16.0",
@@ -62,16 +63,5 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "request": "^2.87.0"
-  },
-  "jest": {
-    "setupTestFrameworkScriptFile": "./testsSetup.js",
-    "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/spec/__mocks__/fileMock.js",
-      "\\.css$": "identity-obj-proxy"
-    },
-    "testPathIgnorePatterns": [
-      "<rootDir>/client/dist",
-      "<rootDir>/node_modules"
-    ]
   }
 }

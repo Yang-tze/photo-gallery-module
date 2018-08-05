@@ -1,0 +1,9 @@
+spec
+.circleci
+jest.config.js
+node_modules
+src
+testsSetup.js
+coverage
+csv-generator
+dock
