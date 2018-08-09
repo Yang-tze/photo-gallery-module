@@ -1,10 +1,10 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const faker = require('faker');
 
-const product = (imgCount = 0, totImg = 0) => {
+const product = (imgCount = 0, totImg = 0, product) => {
   let randImg = randImgList(imgCount, totImg);
   return {
-    name: faker.commerce.productName(),
+    name: product,
     detail: faker.lorem.slug(),
     image: randImg,
   };
