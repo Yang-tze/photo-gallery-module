@@ -29,7 +29,33 @@
   ### Installing Dependencies
 
   From within the root directory:
-
-    ```sh
+  
     npm install
-    ```
+
+## CRUD API
+
+  Post new product info
+  ```
+  app.post('/images/add_product')
+  
+  ```
+  Get images 
+  ```
+  app.get('/images/:id/images')
+  
+  ```
+  Get product info
+  ```
+  app.get('/images/:id/product_info')
+  
+  ```
+  Update product info
+  ```
+  app.put('/images/update_product')
+  
+  ```
+  Delete product info/image
+  ```
+  app.delete('/images/delete_product')
+  
+  ```
