@@ -32,7 +32,7 @@ class PhotoGalleryModule extends React.Component {
   getProductInfo() {
     $.get(`/images${window.location.pathname}/product_info`, (data) => {
     // $.get(`http://ec2-54-153-53-170.us-west-1.compute.amazonaws.com${window.location.pathname}/product_info`, (data) => {
-      this.setState({ product_name: data.name, product_detail: data.detail });
+      this.setState({ product_name: data.name, product_detail: data.details });
     });
   }
 

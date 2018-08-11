@@ -5,7 +5,7 @@ const ModalImageThumbnail = ({ imageThumbnail, setImage }) => {
   // const selectedClassName = selected ? 'image-thumbnail' : 'image-thumbnail selected';
   return (
     <div className="modal-image-thumbnail" onClick={() => setImage(imageThumbnail)} role="presentation">
-      <img className="thumbnail" src={`https://s3-us-west-1.amazonaws.com/fec-photo-gallery-images/${imageThumbnail}`} alt="" />
+      <img className="thumbnail" src={`https://s3-us-west-1.amazonaws.com/system-design-capstone/${imageThumbnail}`} alt="" />
     </div>
   );
 };

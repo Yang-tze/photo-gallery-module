@@ -44,7 +44,7 @@ class ImageGalleryModal extends React.Component {
               <ModalImageList images={images} setImage={img => setImage(img)} />
             </div>
           </div>
-          <img className="modal-main-image" src={`https://s3-us-west-1.amazonaws.com/fec-photo-gallery-images/${image}`} alt="" />
+          <img className="modal-main-image" src={`https://s3-us-west-1.amazonaws.com/system-design-capstone/${image}`} alt="" />
         </div>
       </div>
     );

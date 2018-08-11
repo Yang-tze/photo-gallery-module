@@ -13,7 +13,7 @@ const product = (imgCount = 0, totImg = 0, product) => {
 const randImgList = (imgNum, totImg) => {
   let result = new Set();
   while(result.size < 2+Math.floor(Math.random()*(imgNum-2))) {
-    result.add(Math.floor(Math.random()*totImg));
+    result.add(Math.floor(Math.random()*totImg) + '.png');
   }
   return Array.from(result);
 };

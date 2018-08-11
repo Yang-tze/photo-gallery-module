@@ -5,7 +5,7 @@ const ImageThumbnail = ({ imageThumbnail, index, setIndex }) => {
   // const selectedClassName = selected ? 'image-thumbnail' : 'image-thumbnail selected';
   return (
     <div className="image-thumbnail" onMouseEnter={() => setIndex(index)}>
-      <img className="thumbnail" src={`https://s3-us-west-1.amazonaws.com/fec-photo-gallery-images/${imageThumbnail}`} alt="" />
+      <img className="thumbnail" src={`https://s3-us-west-1.amazonaws.com/system-design-capstone/${imageThumbnail}`} alt="" />
     </div>
   );
 };

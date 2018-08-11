@@ -6,3 +6,5 @@ __snapshots__/
 **/products.csv
 **/product_images.csv
 **/images.csv
+**/product_images_cassandra.csv
+**/product_images_cassandra2.csv
