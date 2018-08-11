@@ -20,7 +20,10 @@ const connection = {
 const pool = new Pool(connection);
 
 const getProductInfo = (id, cb) => {
-  let query = `select name, details from products where id = $1`;
+  let query = `select name, details from products where id = $1`
+  if (isNaN(id)) {
+    query = `select name, details from products where name = $1`
+  }
   pool.query(query, [id])
     .then(res => cb(res))
     .catch(err => console.log(err))
@@ -28,6 +31,9 @@ const getProductInfo = (id, cb) => {
 
 const getImages = (id, cb) => {
   let query = `select img_url from product_images where product_images.product_id = $1`;
+  if (isNaN(id)) {
+    query = `select img_url from product_images pi inner join products on pi.product_id = products.id where products.name = $1`;
+  }
   pool.query(query, [id])
     .then(res => cb(res))
     .catch(err => console.log(err))

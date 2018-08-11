@@ -17,7 +17,7 @@ app.get('/:id', (req, res) => {
 });
 
 app.get('/images/:id/images', (req, res) => {
-  console.log('running get images');
+  console.log(req.params);
   db.getImages(req.params.id, (data) => {
     data = data.rows;
     res.status(200).send(data.map(value => value.img_url));
@@ -25,7 +25,6 @@ app.get('/images/:id/images', (req, res) => {
 });
 
 app.get('/images/:id/product_info', (req, res) => {
-  console.log('running get productinfo');
   db.getProductInfo(req.params.id, (data) => {
     data = data.rows
     res.status(200).send(data[0]);
