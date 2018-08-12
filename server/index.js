@@ -33,21 +33,27 @@ app.get('/images/:id/product_info', (req, res) => {
 
 app.post('/images/add_product', (req, res) => {
   db.addProduct(req.body, data => {
-    res.status(201).send();
-  });
-});
-
-app.put('/images/update_product', (req, res) => {
-  db.updateProduct(req.body, data => {
     res.status(201).send(data);
   });
 });
 
-app.delete('/images/delete_product', (req, res) => {
-  db.deleteProduct(req,body, data => {
-    res.status(204).send('product deleted');
+app.post('/images/add_image', (req, res) => {
+  db.addImage(req.body, data => {
+    res.status(201).send(data);
   });
 });
+
+// app.put('/images/update_product', (req, res) => {
+//   db.updateProduct(req.body, data => {
+//     res.status(201).send(data);
+//   });
+// });
+
+// app.delete('/images/delete_product', (req, res) => {
+//   db.deleteProduct(req,body, data => {
+//     res.status(204).send('product deleted');
+//   });
+// });
 
 /* eslint-disable no-console */
 app.listen(port, () => {
