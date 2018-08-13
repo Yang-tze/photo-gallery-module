@@ -43,17 +43,17 @@ app.post('/images/add_image', (req, res) => {
   });
 });
 
-// app.put('/images/update_product', (req, res) => {
-//   db.updateProduct(req.body, data => {
-//     res.status(201).send(data);
-//   });
-// });
+app.put('/images/update_product', (req, res) => {
+  db.updateProduct(req.body, data => {
+    res.status(201).send(data);
+  });
+});
 
-// app.delete('/images/delete_product', (req, res) => {
-//   db.deleteProduct(req,body, data => {
-//     res.status(204).send('product deleted');
-//   });
-// });
+app.delete('/images/delete_product', (req, res) => {
+  db.deleteProduct(req.body, data => {
+    res.status(204).send(data);
+  });
+});
 
 /* eslint-disable no-console */
 app.listen(port, () => {

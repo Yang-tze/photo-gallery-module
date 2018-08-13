@@ -46,29 +46,27 @@ const addImage = (params, cb) => {
     .catch(err => console.log(err))
 };
 
-// const updateProduct = (params, cb) => {
-//   connection.query(`update products set detail = ${params.detail} where name = ${params.product} `, (err, result) => {
-//     if (err) {
-//       console.log('failed to update product');
-//     } else {
-//       cb(result);
-//     }
-//   });
-// };
+const updateProduct = (params, cb) => {
+  let values = [params.name, params.details];
+  let query = `update products set details = $2 where name = $1 returning *`;
+  pool.query(query, values)
+    .then(res => cb(res))
+    .catch(err => console.log(err))
+};
 
-// const deleteProduct = (params, cb) => {
-//   connection.query(`delete from products where product.name = ${params.product}`, (err, result) => {
-//     if (err) {
-//       console.log('failed to delete product');
-//     } else {
-//       cb(results);
-//     }
-//   });
-// };
+const deleteProduct = (params, cb) => {
+  let values = [params.name]
+  let query = `delete from products where name = $1 returning *`;
+  pool.query(query, values)
+    .then(res => cb(res))
+    .catch(err => console.log(err))
+};
 
 module.exports = {
   getProductInfo,
   getImages,
   addProduct,
-  addImage
+  addImage,
+  updateProduct,
+  deleteProduct
 }
