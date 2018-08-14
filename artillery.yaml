@@ -1,0 +1,61 @@
+config:
+  target: 'http://localhost:3002'
+  phases:
+    - duration: 60
+      arrivalRate: 30
+      rampTo: 800
+      name: 'Warm up application'
+    - duration: 180
+      arrivalRate: 800
+      name: 'Sustained max load'
+  processor: './artilleryUtils.js'
+  # variables: 
+  #   product-names:
+  #     - "aaaaaaa"
+  #     - "jjjjjjj"
+  #     - "bibijjj"
+  #     - "eeiebjd"
+  #     - "ihjjjjj"
+  #   id: 
+  #     - "5"
+  #     - "10000000"
+  #     - "5000000"
+  #     - "9000000"
+  #     - "200000"
+  #     - "1000"
+  #     - "9000001"
+  #     - "9999999"
+  #     - "9999995"
+  #     - "8000000"
+  #     - "50000"
+  #     - "100"
+  #     - "250"
+  #     - "80000"
+  #     - "450000"
+  #     - "500"
+  #     - "9000008"
+  # defaults:
+  #   headers:
+  #     x-my-service-auth: '987401838271002188298567'
+scenarios:
+  - flow:
+    # - loop:
+      # - function: "generateRandomNum"
+      # - get:
+      #   url: "/images/{{ id }}/images"
+      # count: 2
+    - function: "generateRandomPost"
+    - post:
+        url: "/images/add_product"
+        json:
+          name: "{{ name }}"
+          details: "{{ details }}"
+    # - log: "Sent a request to /images/:id/product_info with {{ name }}, {{ details }}"
+
+
+
+
+
+
+
+ 

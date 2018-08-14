@@ -1,3 +1,4 @@
+require('newrelic');
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
@@ -17,7 +18,6 @@ app.get('/:id', (req, res) => {
 });
 
 app.get('/images/:id/images', (req, res) => {
-  console.log(req.params);
   db.getImages(req.params.id, (data) => {
     data = data.rows;
     res.status(200).send(data.map(value => value.img_url));
