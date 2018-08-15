@@ -18,21 +18,21 @@ class PhotoGalleryModule extends React.Component {
   }
 
   componentDidMount() {
-    this.getImageList();
+    // this.getImageList();
     this.getProductInfo();
   }
 
-  getImageList() {
-    $.get(`/images${window.location.pathname}/images`, (data) => {
-    // $.get(`http://ec2-54-153-53-170.us-west-1.compute.amazonaws.com${window.location.pathname}/images`, (data) => {
-      this.setState({ images: data });
-    });
-  }
+  // getImageList() {
+  //   $.get(`/images${window.location.pathname}/images`, (data) => {
+  //   // $.get(`http://ec2-54-153-53-170.us-west-1.compute.amazonaws.com${window.location.pathname}/images`, (data) => {
+  //     this.setState({ images: data });
+  //   });
+  // }
 
   getProductInfo() {
     $.get(`/images${window.location.pathname}/product_info`, (data) => {
     // $.get(`http://ec2-54-153-53-170.us-west-1.compute.amazonaws.com${window.location.pathname}/product_info`, (data) => {
-      this.setState({ product_name: data.name, product_detail: data.details });
+      this.setState({ product_name: data.name, product_detail: data.details, images: data.images });
     });
   }
 

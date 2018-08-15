@@ -3,10 +3,10 @@ config:
   phases:
     - duration: 60
       arrivalRate: 30
-      rampTo: 800
+      rampTo: 1000
       name: 'Warm up application'
     - duration: 180
-      arrivalRate: 800
+      arrivalRate: 1000
       name: 'Sustained max load'
   processor: './artilleryUtils.js'
   # variables: 
@@ -39,17 +39,17 @@ config:
   #     x-my-service-auth: '987401838271002188298567'
 scenarios:
   - flow:
-    # - loop:
-      # - function: "generateRandomNum"
-      # - get:
-      #   url: "/images/{{ id }}/images"
-      # count: 2
-    - function: "generateRandomPost"
-    - post:
-        url: "/images/add_product"
-        json:
-          name: "{{ name }}"
-          details: "{{ details }}"
+    - loop:
+      - function: "generateRandomNum"
+      - get:
+          url: "/images/{{ id }}/product_info"
+      count: 2
+    # - function: "generateRandomPost"
+    # - post:
+    #     url: "/images/add_product"
+    #     json:
+    #       name: "{{ name }}"
+    #       details: "{{ details }}"
     # - log: "Sent a request to /images/:id/product_info with {{ name }}, {{ details }}"
 
 
