@@ -29,8 +29,8 @@ const generateRandomName = () => {
 let tester = siege().concurrent(40).on(3002);
 
 for (let i = 0; i < 100000; i++) {
-  let name = generateRandomName();
-  tester = tester.for(1).times.get(`/images/${name}/product_info`)
+  let id = generateRandomName();
+  tester = tester.for(1).times.get(`/images/${id}/product_info`)
 };
 
 

@@ -40,7 +40,6 @@ if (cluster.isMaster) {
 
   app.get('/images/:id/product_info', (req, res) => {
     db.getProductInfo(req.params.id, (data) => {
-      data = data.rows
       let result = {};
       result.name = data[0].name;
       result.details = data[0].details;
