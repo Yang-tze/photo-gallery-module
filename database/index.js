@@ -50,7 +50,7 @@ const getProductInfo = (id, cb) => {
       }
     }
   })
-}
+};
 
 const addProduct = (params, cb) => {
   let values = [params.name, params.details];

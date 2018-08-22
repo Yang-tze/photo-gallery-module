@@ -29,3 +29,6 @@ module.exports = {
     ]
   }
 };
+//get rid of style-loader
+//app,js for client bundle
+//app-server.js for server bundle

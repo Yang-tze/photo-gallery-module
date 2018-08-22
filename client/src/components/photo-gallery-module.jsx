@@ -8,18 +8,20 @@ class PhotoGalleryModule extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      images: ['1.jpg', '2.jpg', '3.jpg'],
+      images: props.productData.images || ['1.jpg', '2.jpg', '3.jpg'],
       image: '1.jpg',
       index: 0,
       show: false,
-      product_name: 'SanDisk Cruzer CZ36 64GB USB 2.0 Flash Drive, Frustration-Free Packaging- SDCZ36-064G-AFFP',
-      product_detail: '64GB',
+      product_name: props.productData.name || 'SanDisk Cruzer CZ36 64GB USB 2.0 Flash Drive, Frustration-Free Packaging- SDCZ36-064G-AFFP',
+      product_detail: props.productData.details || '64GB',
     };
   }
 
   componentDidMount() {
     // this.getImageList();
-    this.getProductInfo();
+    if (!this.props.productData) {
+      this.getProductInfo();
+    }
   }
 
   // getImageList() {

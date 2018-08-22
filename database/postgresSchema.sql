@@ -24,3 +24,8 @@ CREATE TABLE product_images (
 -- FROM './images.csv' DELIMITER ',';
 
 \copy product_images (id, product_id, img_url) FROM './csv-generator/product_images.csv' DELIMITER ',';
+
+
+
+
+
