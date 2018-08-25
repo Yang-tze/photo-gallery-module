@@ -8,12 +8,15 @@ class PhotoGalleryModule extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      images: props.productData.images || ['1.jpg', '2.jpg', '3.jpg'],
+      images: ['1.jpg', '2.jpg', '3.jpg'],
+      // images: props.productData.images || ['1.jpg', '2.jpg', '3.jpg'],
       image: '1.jpg',
       index: 0,
       show: false,
-      product_name: props.productData.name || 'SanDisk Cruzer CZ36 64GB USB 2.0 Flash Drive, Frustration-Free Packaging- SDCZ36-064G-AFFP',
-      product_detail: props.productData.details || '64GB',
+      product_name: 'SanDisk Cruzer CZ36 64GB USB 2.0 Flash Drive, Frustration-Free Packaging- SDCZ36-064G-AFFP',
+      // product_name: props.productData.name || 'SanDisk Cruzer CZ36 64GB USB 2.0 Flash Drive, Frustration-Free Packaging- SDCZ36-064G-AFFP',
+      product_detail: '64GB',
+      // product_detail: props.productData.details || '64GB',
     };
   }
 
@@ -23,13 +26,6 @@ class PhotoGalleryModule extends React.Component {
       this.getProductInfo();
     }
   }
-
-  // getImageList() {
-  //   $.get(`/images${window.location.pathname}/images`, (data) => {
-  //   // $.get(`http://ec2-54-153-53-170.us-west-1.compute.amazonaws.com${window.location.pathname}/images`, (data) => {
-  //     this.setState({ images: data });
-  //   });
-  // }
 
   getProductInfo() {
     $.get(`/images${window.location.pathname}/product_info`, (data) => {

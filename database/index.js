@@ -12,7 +12,7 @@ const connection = {
 
 const pool = new Pool(connection);
 
-// const getProductInfo = (id, cb) => {
+// const getProductInfo = (id, cb) => 
 //   let query = `select products.name, products.details, product_images.img_url from products inner join product_images on product_images.product_id = products.id where products.id = $1`;
 //   if (isNaN(id)) {
 //     query = `select products.name, products.details, product_images.img_url from products inner join product_images on product_images.product_id = products.id where products.name = $1`;
